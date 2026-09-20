@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #0F0F11;
+    color: #FFFFFF;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* Paleta Titanio & Rubí */
+.bg-titanio-900 { background-color: #0F0F11; }
+.bg-titanio-800 { background-color: #18181B; }
+.bg-titanio-700 { background-color: #27272A; }
+.border-titanio-700 { border-color: #27272A; }
+.text-titanio-300 { color: #A1A1AA; }
+
+.bg-rubi { background-color: #E11D48; }
+.bg-rubi-hover:hover { background-color: #BE123C; }
+.text-rubi { color: #E11D48; }
+.border-rubi { border-color: #E11D48; }
