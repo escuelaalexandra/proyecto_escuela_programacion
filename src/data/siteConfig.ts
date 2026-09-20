@@ -3,7 +3,6 @@ export const siteData = {
   tagline: "Protección Patrimonial & Antifraude",
   phoneNumber: "525512345678",
   whatsappNumber: "525512345678",
-  // Esta es la propiedad que falta y causa el error:
   whatsappNumberFormatted: "+52 55 1234 5678",
   email: "contacto@nexusresguardo.mx",
   defaultMessage: "Hola, necesito asesoría sobre un caso de retención o aclaración.",
@@ -37,5 +36,24 @@ export const siteData = {
     }
   ],
   casesHandled: [],
-  steps: []
+  steps: [
+    { 
+      number: "01", 
+      title: "Evaluación Inicial", 
+      description: "Analizamos tu caso y comprobantes.",
+      desc: "Analizamos tu caso y comprobantes de manera confidencial." 
+    },
+    { 
+      number: "02", 
+      title: "Diagnóstico Técnico", 
+      description: "Rastreamos el estado con las normativas aplicables.",
+      desc: "Rastreamos el estado de los fondos en el sistema interbancario." 
+    },
+    { 
+      number: "03", 
+      title: "Gestión Directa", 
+      description: "Iniciamos el proceso de aclaración o recuperación.",
+      desc: "Iniciamos el proceso de aclaración técnica para la recuperación." 
+    }
+  ]
 };
