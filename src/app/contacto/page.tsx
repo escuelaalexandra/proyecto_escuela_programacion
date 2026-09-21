@@ -37,7 +37,7 @@ export default function ContactoPage() {
             <div className="h-56 sm:h-64 rounded-2xl overflow-hidden relative border border-titanio-700 mb-8 shadow-md">
               <img 
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" 
-                alt="Centro de atención y soporte legal en México" 
+                alt="Centro de atención y soporte profesional en México" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-titanio-900/90 via-titanio-900/30 to-transparent" />

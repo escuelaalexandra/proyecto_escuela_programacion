@@ -15,7 +15,7 @@ export default function NosotrosPage() {
           Sobre Nuestra Firma
         </div>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 tracking-tight leading-tight">
-          Compromiso Técnico y Legal en México
+          Compromiso Técnico y de apoyo en México
         </h1>
         <p className="text-2xl text-titanio-300 max-w-4xl mx-auto font-medium leading-relaxed">
           Somos un equipo multidisciplinario especializado en la orientación, diagnóstico técnico y trazabilidad bancaria para la protección del patrimonio financiero de las familias y empresas mexicanas.
@@ -65,7 +65,7 @@ export default function NosotrosPage() {
 
           <div className="bg-titanio-800 p-8 rounded-2xl border border-titanio-700">
             <Scale className="w-12 h-12 text-rubi mb-5" />
-            <h3 className="text-2xl font-bold mb-3">Marco Legal Nacional</h3>
+            <h3 className="text-2xl font-bold mb-3">Marco Nacional</h3>
             <p className="text-titanio-300 text-base leading-relaxed">
               Orientación alineada con las normativas bancarias del Banco de México (Banxico) y procedimientos del sistema interbancario SPEI.
             </p>

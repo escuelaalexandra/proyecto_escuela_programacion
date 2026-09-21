@@ -9,7 +9,7 @@ export const siteData = {
   hero: {
     badge: "Plataforma de Protección Patrimonial",
     title: "Especialistas en Aclaraciones Financieras y Protección de Activos",
-    description: "Brindamos soporte legal y técnico para la recuperación de transferencias retenidas, aclaración de fraudes y resguardo de patrimonio en México.",
+    description: "Brindamos soporte y acompañamiento y técnico para la recuperación de transferencias retenidas, aclaración de fraudes y resguardo de patrimonio en México.",
     ctaButton: "Iniciar Evaluación de Caso",
     imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
   },
