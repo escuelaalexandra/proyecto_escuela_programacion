@@ -1,167 +1,75 @@
-"use client";
-
+cat > src/components/Navbar.tsx <<'EOF'
 import Link from "next/link";
-import { useState } from "react";
-import { ArrowUpRight, Menu, ShieldCheck, X } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { siteData } from "@/data/siteConfig";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
   const whatsappUrl = `https://wa.me/${siteData.phoneNumber}?text=${encodeURIComponent(
     siteData.defaultMessage
   )}`;
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#080808]/90 backdrop-blur-xl">
-      <div className="mx-auto flex h-[82px] w-full max-w-[1500px] items-center justify-between px-5 sm:px-8 lg:px-12">
+    <header className="sticky top-0 z-50 border-b border-titanio-700/70 bg-titanio-900/85 backdrop-blur-md">
+      <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-4 px-4 sm:min-h-[82px] sm:px-6 lg:min-h-[86px] lg:px-8">
 
-        {/* MARCA */}
+        {/* LOGO + NOMBRE */}
         <Link
           href="/"
-          onClick={closeMenu}
-          className="group flex items-center gap-3"
+          className="flex min-w-0 shrink-0 items-center gap-3 sm:gap-4"
         >
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#741f2b]/60 bg-[#741f2b]/10 transition-all duration-300 group-hover:border-[#9a3341] group-hover:bg-[#741f2b]/20">
-            <ShieldCheck className="h-6 w-6 text-[#9a3341]" />
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-rubi/30 bg-rubi/10 sm:h-12 sm:w-12">
+            <ShieldCheck className="h-7 w-7 text-rubi sm:h-8 sm:w-8" />
           </div>
 
-          <div className="leading-none">
-            <div className="text-[17px] font-black tracking-[0.16em] text-[#f4f0e8] sm:text-[19px]">
-              NEXUS
-            </div>
-            <div className="mt-1 text-[10px] font-bold tracking-[0.28em] text-[#9a3341] sm:text-[11px]">
-              RESGUARDO
-            </div>
-          </div>
+          <span className="whitespace-nowrap text-lg font-black tracking-wider text-white sm:text-xl lg:text-2xl">
+            NEXUS <span className="text-rubi">RESGUARDO</span>
+          </span>
         </Link>
 
-        {/* NAVEGACIÓN DESKTOP */}
-        <nav className="hidden items-center gap-8 lg:flex">
+        {/* MENÚ */}
+        <nav className="hidden items-center gap-6 text-base font-bold text-titanio-300 md:flex lg:gap-8 lg:text-lg">
           <Link
             href="/"
-            className="group relative py-3 text-[18px] font-bold text-[#a7a19b] transition-colors hover:text-[#f4f0e8]"
+            className="transition-colors hover:text-white"
           >
             Inicio
-            <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#9a3341] transition-all duration-300 group-hover:w-full" />
           </Link>
 
           <Link
             href="/servicios"
-            className="group relative py-3 text-[18px] font-bold text-[#a7a19b] transition-colors hover:text-[#f4f0e8]"
+            className="transition-colors hover:text-white"
           >
             Servicios
-            <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#9a3341] transition-all duration-300 group-hover:w-full" />
           </Link>
 
           <Link
             href="/nosotros"
-            className="group relative py-3 text-[18px] font-bold text-[#a7a19b] transition-colors hover:text-[#f4f0e8]"
+            className="transition-colors hover:text-white"
           >
             Nosotros
-            <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#9a3341] transition-all duration-300 group-hover:w-full" />
           </Link>
 
           <Link
             href="/contacto"
-            className="group relative py-3 text-[18px] font-bold text-[#a7a19b] transition-colors hover:text-[#f4f0e8]"
+            className="transition-colors hover:text-white"
           >
             Contacto
-            <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#9a3341] transition-all duration-300 group-hover:w-full" />
           </Link>
         </nav>
 
-        {/* WHATSAPP DESKTOP */}
+        {/* WHATSAPP */}
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-full border border-[#741f2b] bg-[#741f2b] px-5 py-3 text-sm font-extrabold text-[#f4f0e8] shadow-[0_8px_30px_rgba(116,31,43,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#9a3341] hover:bg-[#9a3341] lg:flex"
+          className="flex shrink-0 items-center gap-2.5 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-extrabold text-white shadow-lg transition-all hover:bg-[#20ba5a] hover:-translate-y-0.5 sm:px-6 sm:py-3.5 sm:text-base"
         >
-          <WhatsAppIcon className="h-6 w-6 fill-current" />
-          <span>WhatsApp</span>
-          <ArrowUpRight className="h-5 w-5" />
+          <WhatsAppIcon className="h-5 w-5 fill-white sm:h-6 sm:w-6" />
+          <span>Asesoría</span>
         </a>
-
-        {/* BOTÓN MENÚ MÓVIL */}
-        <button
-          type="button"
-          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((value) => !value)}
-          className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-[#f4f0e8] transition-all duration-300 hover:border-[#741f2b] hover:bg-[#741f2b]/10 lg:hidden"
-        >
-          {isOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
-      </div>
-
-      {/* MENÚ MÓVIL */}
-      <div
-        className={`overflow-hidden border-t border-white/10 bg-[#0b0b0b] transition-all duration-300 lg:hidden ${
-          isOpen
-            ? "max-h-[500px] opacity-100"
-            : "max-h-0 border-t-transparent opacity-0"
-        }`}
-      >
-        <nav className="mx-auto flex w-full max-w-[1500px] flex-col px-5 py-5 sm:px-8">
-          <Link
-            href="/"
-            onClick={closeMenu}
-            className="flex items-center justify-between border-b border-white/10 py-5 text-xl font-bold text-[#f4f0e8]"
-          >
-            Inicio
-            <ArrowUpRight className="h-5 w-5 text-[#9a3341]" />
-          </Link>
-
-          <Link
-            href="/servicios"
-            onClick={closeMenu}
-            className="flex items-center justify-between border-b border-white/10 py-5 text-xl font-bold text-[#f4f0e8]"
-          >
-            Servicios
-            <ArrowUpRight className="h-5 w-5 text-[#9a3341]" />
-          </Link>
-
-          <Link
-            href="/nosotros"
-            onClick={closeMenu}
-            className="flex items-center justify-between border-b border-white/10 py-5 text-xl font-bold text-[#f4f0e8]"
-          >
-            Nosotros
-            <ArrowUpRight className="h-5 w-5 text-[#9a3341]" />
-          </Link>
-
-          <Link
-            href="/contacto"
-            onClick={closeMenu}
-            className="flex items-center justify-between border-b border-white/10 py-5 text-xl font-bold text-[#f4f0e8]"
-          >
-            Contacto
-            <ArrowUpRight className="h-5 w-5 text-[#9a3341]" />
-          </Link>
-
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={closeMenu}
-            className="mt-5 flex items-center justify-center gap-3 rounded-full bg-[#741f2b] px-5 py-4 text-base font-extrabold text-[#f4f0e8] transition-all duration-300 hover:bg-[#9a3341]"
-          >
-            <WhatsAppIcon className="h-5 w-5 fill-current" />
-            Hablar por WhatsApp
-            <ArrowUpRight className="h-5 w-5" />
-          </a>
-        </nav>
       </div>
     </header>
   );
 }
+EOF
