@@ -1,4 +1,4 @@
-cat > src/components/Navbar.tsx <<'EOF'
+
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import { siteData } from "@/data/siteConfig";
@@ -72,4 +72,4 @@ export default function Navbar() {
     </header>
   );
 }
-EOF
+
