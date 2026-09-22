@@ -110,7 +110,7 @@ export default function Navbar() {
           </button>
 
         {menuOpen && (
-  <div className="absolute right-0 top-[calc(100%+12px)] w-[min(88vw,340px)] overflow-hidden rounded-2xl border border-white/10 bg-titanio-900/95 p-3 shadow-2xl backdrop-blur-xl">
+  <div className="absolute right-0 top-[calc(100%+12px)] w-[min(88vw,340px)] overflow-hidden rounded-2xl border border-white/10 bg-[#18181b]/95 p-3 shadow-2xl backdrop-blur-xl"
     <nav className="flex flex-col gap-1">
       <Link
         href="/"
