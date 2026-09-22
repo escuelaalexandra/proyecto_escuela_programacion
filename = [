@@ -1,0 +1,300 @@
+[1mdiff --git a/src/app/servicios/page.tsx b/src/app/servicios/page.tsx[m
+[1mindex 43a7ce3..11e2e84 100644[m
+[1m--- a/src/app/servicios/page.tsx[m
+[1m+++ b/src/app/servicios/page.tsx[m
+[36m@@ -1,206 +1,108 @@[m
+ import Navbar from "@/components/Navbar";[m
+ import WhatsAppButton from "@/components/WhatsAppButton";[m
+ import { siteData } from "@/data/siteConfig";[m
+[31m-import { ShieldCheck, CheckCircle2, FileSearch, Scale, FileText, ArrowLeftRight, Landmark, Lock } from "lucide-react";[m
+[32m+[m[32mimport {[m
+[32m+[m[32m  ShieldCheck,[m
+[32m+[m[32m  CheckCircle2,[m
+[32m+[m[32m  FileSearch,[m
+[32m+[m[32m  FileText,[m
+[32m+[m[32m  ArrowLeftRight,[m
+[32m+[m[32m  Landmark,[m
+[32m+[m[32m  LockKeyhole,[m
+[32m+[m[32m  Search,[m
+[32m+[m[32m  FolderOpen,[m
+[32m+[m[32m  Activity,[m
+[32m+[m[32m  ArrowDownRight,[m
+[32m+[m[32m} from "lucide-react";[m
+[32m+[m
+[32m+[m[32mconst services = [[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Recuperación y trazabilidad de activos",[m
+[32m+[m[32m    description:[m
+[32m+[m[32m      "Organizamos la información disponible para identificar movimientos, recursos y elementos patrimoniales que requieren revisión y seguimiento.",[m
+[32m+[m[32m    image:[m
+[32m+[m[32m      "https://images.pexels.com/photos/7821688/pexels-photo-7821688.jpeg?auto=compress&cs=tinysrgb&w=1800",[m
+[32m+[m[32m    imageAlt:[m
+[32m+[m[32m      "Documentos y elementos de trabajo relacionados con información patrimonial",[m
+[32m+[m[32m    tag: "Trazabilidad patrimonial",[m
+[32m+[m[32m    tagIcon: ArrowLeftRight,[m
+[32m+[m[32m    panelTitle: "Información patrimonial",[m
+[32m+[m[32m    panelText: "Activos, documentos y movimientos organizados",[m
+[32m+[m[32m    status: "En revisión",[m
+[32m+[m[32m    icon: Landmark,[m
+[32m+[m[32m    details: [[m
+[32m+[m[32m      "Identificación de recursos y bienes relacionados con la situación.",[m
+[32m+[m[32m      "Organización de movimientos y documentos disponibles.",[m
+[32m+[m[32m      "Seguimiento de información relevante durante cada etapa.",[m
+[32m+[m[32m      "Construcción de una visión clara del panorama patrimonial.",[m
+[32m+[m[32m    ],[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Análisis de operaciones y posibles fraudes",[m
+[32m+[m[32m    description:[m
+[32m+[m[32m      "Revisamos de forma estructurada transferencias, operaciones y señales que permitan comprender qué ocurrió y ordenar la información disponible.",[m
+[32m+[m[32m    image:[m
+[32m+[m[32m      "https://images.pexels.com/photos/13156204/pexels-photo-13156204.jpeg?auto=compress&cs=tinysrgb&w=1800",[m
+[32m+[m[32m    imageAlt:[m
+[32m+[m[32m      "Documentos financieros y elementos utilizados para revisar operaciones",[m
+[32m+[m[32m    tag: "Análisis de operaciones",[m
+[32m+[m[32m    tagIcon: Search,[m
+[32m+[m[32m    panelTitle: "Revisión estructurada",[m
+[32m+[m[32m    panelText: "Movimientos, registros y antecedentes disponibles",[m
+[32m+[m[32m    status: "Analizando",[m
+[32m+[m[32m    icon: Activity,[m
+[32m+[m[32m    details: [[m
+[32m+[m[32m      "Revisión de transferencias y operaciones registradas.",[m
+[32m+[m[32m      "Identificación de movimientos que requieren mayor atención.",[m
+[32m+[m[32m      "Orden cronológico de información y antecedentes.",[m
+[32m+[m[32m      "Documentación de hallazgos para facilitar el seguimiento.",[m
+[32m+[m[32m    ],[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    title: "Resguardo y seguimiento patrimonial",[m
+[32m+[m[32m    description:[m
+[32m+[m[32m      "Mantenemos organizada la información relacionada con activos, documentos y avances para facilitar una visión continua de cada situación.",[m
+[32m+[m[32m    image:[m
+[32m+[m[32m      "https://images.pexels.com/photos/7821688/pexels-photo-7821688.jpeg?auto=compress&cs=tinysrgb&w=1800",[m
+[32m+[m[32m    imageAlt:[m
+[32m+[m[32m      "Espacio profesional de trabajo utilizado para organizar información y documentos",[m
+[32m+[m[32m    tag: "Seguimiento patrimonial",[m
+[32m+[m[32m    tagIcon: LockKeyhole,[m
+[32m+[m[32m    panelTitle: "Control de información",[m
+[32m+[m[32m    panelText: "Documentación y avances organizados por etapas",[m
+[32m+[m[32m    status: "Seguimiento",[m
+[32m+[m[32m    icon: FolderOpen,[m
+[32m+[m[32m    details: [[m
+[32m+[m[32m      "Organización de documentación y antecedentes relevantes.",[m
+[32m+[m[32m      "Seguimiento de cambios y avances de cada situación.",[m
+[32m+[m[32m      "Concentración de información para evitar pérdidas de contexto.",[m
+[32m+[m[32m      "Actualización ordenada de los elementos que requieren atención.",[m
+[32m+[m[32m    ],[m
+[32m+[m[32m  },[m
+[32m+[m[32m];[m
+ [m
+ export default function ServiciosPage() {[m
+   return ([m
+[31m-    <div className="min-h-screen bg-titanio-900 text-white font-sans">[m
+[32m+[m[32m    <div className="min-h-screen bg-[#080808] text-[#f4f0e8] font-sans">[m
+       <Navbar />[m
+ [m
+[31m-      {/* CABECERA DE LA PÁGINA (TEXTOS GRANDES Y DESTACADOS) */}[m
+[31m-      <section className="pt-14 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">[m
+[31m-        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-rubi/10 border border-rubi/30 text-rubi text-base font-bold uppercase tracking-wider mb-8">[m
+[31m-          <ShieldCheck className="w-6 h-6" />[m
+[31m-          Servicios Especializados en México[m
+[31m-        </div>[m
+[31m-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 tracking-tight leading-tight">[m
+[31m-          Nuestras Áreas de Orientación y Diagnóstico[m
+[31m-        </h1>[m
+[31m-        <p className="text-2xl text-titanio-300 max-w-4xl mx-auto font-medium leading-relaxed">[m
+[31m-          Estrategias integrales diseñadas para evaluar la viabilidad de recuperación, congelamiento preventivo y blindaje patrimonial ante incidentes financieros dentro del sistema bancario nacional.[m
+[31m-        </p>[m
+[31m-      </section>[m
+[31m-[m
+[31m-      {/* DETALLE DE SERVICIOS - FOTOS CONECTADAS DIRECTAMENTE AL CONCEPTO */}[m
+[31m-      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-20">[m
+[31m-        [m
+[31m-        {/* TARJETA 1: RECUPERACIÓN PATRIMONIAL */}[m
+[31m-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-titanio-800 p-8 sm:p-10 rounded-3xl border border-titanio-700 shadow-2xl">[m
+[31m-          <div className="lg:col-span-5 flex flex-col gap-4">[m
+[31m-            <div className="h-64 sm:h-72 rounded-2xl overflow-hidden relative border border-titanio-700 shadow-md">[m
+[31m-              <img [m
+[31m-                src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=800&auto=format&fit=crop" [m
+[31m-                alt="Documentos bancarios y análisis de transferencias" [m
+[31m-                className="w-full h-full object-cover"[m
+[31m-              />[m
+[31m-              <div className="absolute inset-0 bg-gradient-to-t from-titanio-900/80 via-transparent to-transparent" />[m
+[31m-              <span className="absolute bottom-4 left-4 bg-titanio-900/90 text-white font-bold text-sm px-3 py-1.5 rounded-lg border border-titanio-700 flex items-center gap-2">[m
+[31m-                <ArrowLeftRight className="w-4 h-4 text-rubi" /> Trazabilidad SPEI[m
+[31m-              </span>[m
+[31m-            </div>[m
+[31m-[m
+[31m-            {/* GRÁFICO TIPO PANEL */}[m
+[31m-            <div className="p-5 rounded-2xl bg-titanio-900/90 border border-titanio-700/80 flex items-center justify-between">[m
+[31m-              <div>[m
+[31m-                <span className="text-xs font-bold uppercase tracking-widest text-rubi block mb-1">Estatus del Análisis</span>[m
+[31m-                <span className="text-lg font-black text-white">Rastreo Interbancario $ MXN</span>[m
+[31m-              </div>[m
+[31m-              <span className="text-sm font-bold text-green-400 bg-green-950/60 border border-green-500/30 px-3 py-1 rounded-full">Activo</span>[m
+[31m-            </div>[m
+[31m-          </div>[m
+[31m-[m
+[31m-          <div className="lg:col-span-7 flex flex-col justify-center">[m
+[31m-            <h2 className="text-3xl sm:text-4xl font-black mb-5 text-white">{siteData.services[0].title}</h2>[m
+[31m-            <p className="text-titanio-300 text-xl mb-8 leading-relaxed font-normal">[m
+[31m-              {siteData.services[0].description}[m
+[31m-            </p>[m
+[31m-            <h3 className="text-base font-bold uppercase tracking-wider text-rubi mb-4">Acciones y Alcance Técnico:</h3>[m
+[31m-            <ul className="space-y-4 mb-8">[m
+[31m-              {siteData.services[0].details.map((detail, i) => ([m
+[31m-                <li key={i} className="flex items-start gap-3.5 text-titanio-300 font-medium text-lg">[m
+[31m-                  <CheckCircle2 className="w-6 h-6 text-rubi mt-1 flex-shrink-0" />[m
+[31m-                  <span>{detail}</span>[m
+[31m-                </li>[m
+[31m-              ))}[m
+[31m-            </ul>[m
+[31m-            <div>[m
+[31m-              <WhatsAppButton variant="banner" customText={`Consultar sobre ${siteData.services[0].title}`} />[m
+[31m-            </div>[m
+[31m-          </div>[m
+[31m-        </div>[m
+[31m-[m
+[31m-        {/* TARJETA 2: APOYO CONTRA FRAUDES DIGITALES (IMAGEN: ANÁLISIS DE BROKERS Y MERCADOS DE TRADING) */}[m
+[31m-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-titanio-800 p-8 sm:p-10 rounded-3xl border border-titanio-700 shadow-2xl lg:flex-row-reverse">[m
+[31m-          <div className="lg:col-span-5 flex flex-col gap-4">[m
+[31m-            <div className="h-64 sm:h-72 rounded-2xl overflow-hidden relative border border-titanio-700 shadow-md">[m
+[31m-              <img [m
+[31m-                src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop" [m
+[31m-                alt="Validación de brokers y auditoría de plataformas financieras" [m
+[31m-                className="w-full h-full object-cover"[m
+[31m-              />[m
+[31m-              <div className="absolute inset-0 bg-gradient-to-t from-titanio-900/80 via-transparent to-transparent" />[m
+[31m-              <span className="absolute bottom-4 left-4 bg-titanio-900/90 text-white font-bold text-sm px-3 py-1.5 rounded-lg border border-titanio-700 flex items-center gap-2">[m
+[31m-                <Landmark className="w-4 h-4 text-rubi" /> Diagnóstico de Entidades[m
+[31m-              </span>[m
+[31m-            </div>[m
+[31m-[m
+[31m-            {/* GRÁFICO TIPO PANEL */}[m
+[31m-            <div className="p-5 rounded-2xl bg-titanio-900/90 border border-titanio-700/80 flex items-center justify-between">[m
+[31m-              <div>[m
+[31m-                <span className="text-xs font-bold uppercase tracking-widest text-rubi block mb-1">Verificación Regulatoria</span>[m
+[31m-                <span className="text-lg font-black text-white">Validación de Brokers & Apps</span>[m
+[31m-              </div>[m
+[31m-              <span className="text-sm font-bold text-rubi bg-rubi/10 border border-rubi/30 px-3 py-1 rounded-full">Antifraude</span>[m
+[31m-            </div>[m
+[31m-          </div>[m
+[32m+[m[32m      {/* HERO DIFERENTE AL DE INICIO */}[m
+ [m
+[31m-          <div className="lg:col-span-7 flex flex-col justify-center">[m
+[31m-            <h2 className="text-3xl sm:text-4xl font-black mb-5 text-white">{siteData.services[1].title}</h2>[m
+[31m-            <p className="text-titanio-300 text-xl mb-8 leading-relaxed font-normal">[m
+[31m-              {siteData.services[1].description}[m
+[31m-            </p>[m
+[31m-            <h3 className="text-base font-bold uppercase tracking-wider text-rubi mb-4">Acciones y Alcance Técnico:</h3>[m
+[31m-            <ul className="space-y-4 mb-8">[m
+[31m-              {siteData.services[1].details.map((detail, i) => ([m
+[31m-                <li key={i} className="flex items-start gap-3.5 text-titanio-300 font-medium text-lg">[m
+[31m-                  <CheckCircle2 className="w-6 h-6 text-rubi mt-1 flex-shrink-0" />[m
+[31m-                  <span>{detail}</span>[m
+[31m-                </li>[m
+[31m-              ))}[m
+[31m-            </ul>[m
+[31m-            <div>[m
+[31m-              <WhatsAppButton variant="banner" customText={`Consultar sobre ${siteData.services[1].title}`} />[m
+[31m-            </div>[m
+[31m-          </div>[m
+[31m-        </div>[m
+[31m-[m
+[31m-        {/* TARJETA 3: PROTECCIÓN Y BLINDAJE DE ACTIVOS (IMAGEN: BÓVEDA Y RESGUARDO DE CAPITAL) */}[m
+[31m-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-titanio-800 p-8 sm:p-10 rounded-3xl border border-titanio-700 shadow-2xl">[m
+[31m-          <div className="lg:col-span-5 flex flex-col gap-4">[m
+[31m-            <div className="h-64 sm:h-72 rounded-2xl overflow-hidden relative border border-titanio-700 shadow-md">[m
+[31m-              <img [m
+[31m-                src="https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?q=80&w=800&auto=format&fit=crop" [m
+[31m-                alt="Bóveda de resguardo y protección de cuentas nacionales" [m
+[31m-                className="w-full h-full object-cover"[m
+[31m-              />[m
+[31m-              <div className="absolute inset-0 bg-gradient-to-t from-titanio-900/80 via-transparent to-transparent" />[m
+[31m-              <span className="absolute bottom-4 left-4 bg-titanio-900/90 text-white font-bold text-sm px-3 py-1.5 rounded-lg border border-titanio-700 flex items-center gap-2">[m
+[31m-                <Lock className="w-4 h-4 text-rubi" /> Blindaje de Capital $ MXN[m
+[31m-              </span>[m
+[31m-            </div>[m
+[31m-[m
+[31m-            {/* GRÁFICO TIPO PANEL */}[m
+[31m-            <div className="p-5 rounded-2xl bg-titanio-900/90 border border-titanio-700/80 flex items-center justify-between">[m
+[31m-              <div>[m
+[31m-                <span className="text-xs font-bold uppercase tracking-widest text-rubi block mb-1">Protección de Efectivo</span>[m
+[31m-                <span className="text-lg font-black text-white">Resguardo & Cuentas Nacionales</span>[m
+[31m-              </div>[m
+[31m-              <span className="text-sm font-bold text-blue-400 bg-blue-950/60 border border-blue-500/30 px-3 py-1 rounded-full">Protegido</span>[m
+[31m-            </div>[m
+[31m-          </div>[m
+[32m+[m[32m      {/* FOOTER */}[m
+ [m
+[31m-          <div className="lg:col-span-7 flex flex-col justify-center">[m
+[31m-            <h2 className="text-3xl sm:text-4xl font-black mb-5 text-white">{siteData.services[2].title}</h2>[m
+[31m-            <p className="text-titanio-300 text-xl mb-8 leading-relaxed font-normal">[m
+[31m-              {siteData.services[2].description}[m
+[31m-            </p>[m
+[31m-            <h3 className="text-base font-bold uppercase tracking-wider text-rubi mb-4">Acciones y Alcance Técnico:</h3>[m
+[31m-            <ul className="space-y-4 mb-8">[m
+[31m-              {siteData.services[2].details.map((detail, i) => ([m
+[31m-                <li key={i} className="flex items-start gap-3.5 text-titanio-300 font-medium text-lg">[m
+[31m-                  <CheckCircle2 className="w-6 h-6 text-rubi mt-1 flex-shrink-0" />[m
+[31m-                  <span>{detail}</span>[m
+[31m-                </li>[m
+[31m-              ))}[m
+[31m-            </ul>[m
+[31m-            <div>[m
+[31m-              <WhatsAppButton variant="banner" customText={`Consultar sobre ${siteData.services[2].title}`} />[m
+[31m-            </div>[m
+[31m-          </div>[m
+[31m-        </div>[m
+[32m+[m[32m        <section className="nexus-whatsapp-final">[m
+[32m+[m[32m          <WhatsAppButton />[m
+[32m+[m[32m        </section>[m
+ [m
+[31m-      </section>[m
+ [m
+[31m-      {/* METODOLOGÍA Y DOCUMENTACIÓN */}[m
+[31m-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-titanio-700">[m
+[31m-        <div className="text-center mb-16">[m
+[31m-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-5">¿Qué Necesitamos Para Analizar Tu Caso?</h2>[m
+[31m-          <p className="text-xl text-titanio-300 max-w-3xl mx-auto font-medium">[m
+[31m-            Para iniciar un diagnóstico acertado, recopilamos la evidencia preliminar que permita trazar la ruta de atención.[m
+[31m-          </p>[m
+[31m-        </div>[m
+ [m
+[31m-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">[m
+[31m-          <div className="bg-titanio-800 p-8 rounded-2xl border border-titanio-700">[m
+[31m-            <FileSearch className="w-12 h-12 text-rubi mb-5" />[m
+[31m-            <h3 className="text-2xl font-bold mb-3">Comprobantes y Claves SPEI</h3>[m
+[31m-            <p className="text-titanio-300 text-base leading-relaxed">[m
+[31m-              Fichas de depósito, transferencias interbancarias o comprobantes de pago generados durante la transacción en México.[m
+[31m-            </p>[m
+[31m-          </div>[m
+ [m
+[31m-          <div className="bg-titanio-800 p-8 rounded-2xl border border-titanio-700">[m
+[31m-            <FileText className="w-12 h-12 text-rubi mb-5" />[m
+[31m-            <h3 className="text-2xl font-bold mb-3">Evidencia de Comunicación</h3>[m
+[31m-            <p className="text-titanio-300 text-base leading-relaxed">[m
+[31m-              Capturas de pantalla de chats, correos electrónicos, URLs de plataformas o números telefónicos involucrados.[m
+[31m-            </p>[m
+[31m-          </div>[m
+ [m
+[31m-          <div className="bg-titanio-800 p-8 rounded-2xl border border-titanio-700">[m
+[31m-            <Scale className="w-12 h-12 text-rubi mb-5" />[m
+[31m-            <h3 className="text-2xl font-bold mb-3">Estado Actual de la Cuenta</h3>[m
+[31m-            <p className="text-titanio-300 text-base leading-relaxed">[m
+[31m-              Notificaciones de bloqueo, accesos denegados o estatus del panel de usuario en la plataforma correspondiente.[m
+[31m-            </p>[m
+[31m-          </div>[m
+[31m-        </div>[m
+[31m-      </section>[m
+ [m
+[31m-      {/* FOOTER */}[m
+[31m-      <footer className="py-12 border-t border-titanio-700 text-center text-lg text-titanio-300 font-medium">[m
+[31m-        <p>© 2026 {siteData.name}. Recuperación Patrimonial y Soporte Antifraude Digital en México.</p>[m
+[32m+[m[32m      <footer className="border-t border-white/10 px-5 py-12 text-center text-base font-medium text-[#a7a19b] sm:px-8 sm:text-lg">[m
+[32m+[m[32m        <p>[m
+[32m+[m[32m          © 2026 {siteData.name}. Protección y seguimiento patrimonial.[m
+[32m+[m[32m        </p>[m
+       </footer>[m
+ [m
+       <WhatsAppButton variant="floating" />[m

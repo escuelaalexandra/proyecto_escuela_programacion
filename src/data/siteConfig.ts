@@ -11,7 +11,7 @@ export const siteData = {
     title: "Especialistas en Aclaraciones Financieras y Protección de Activos",
     description: "Brindamos soporte y acompañamiento y técnico para la recuperación de transferencias retenidas, aclaración de fraudes y resguardo de patrimonio en México.",
     ctaButton: "Iniciar Evaluación de Caso",
-    imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1759429255330-51145b170dad?auto=format&fit=crop&fm=jpg&q=90&w=1800"
   },
   stats: [
     { value: "98%", label: "Casos Evaluados", highlight: true },
@@ -26,7 +26,7 @@ export const siteData = {
       description: "Diagnóstico especializado e investigación técnica para fondos retenidos o no reflejados en el sistema bancario nacional.",
       descripción: "Diagnóstico especializado e investigación técnica para fondos retenidos o no reflejados en el sistema bancario nacional.",
       desc: "Diagnóstico especializado e investigación técnica para fondos retenidos o no reflejados en el sistema bancario nacional.",
-      imageUrl: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=800&auto=format&fit=crop",
+      imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=85&w=1200&auto=format&fit=crop",
       icon: "ShieldAlert",
       details: [
         "Rastreo de claves de rastreo (CEP) e inconsistencias bancarias.",
@@ -46,7 +46,7 @@ export const siteData = {
       description: "Asesoría y representación técnica ante cargos no reconocidos, vulneración de cuentas y suplantación de identidad.",
       descripción: "Asesoría y representación técnica ante cargos no reconocidos, vulneración de cuentas y suplantación de identidad.",
       desc: "Asesoría y representación técnica ante cargos no reconocidos, vulneración de cuentas y suplantación de identidad.",
-      imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop",
+      imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=85&w=1200&auto=format&fit=crop",
       icon: "Lock",
       details: [
         "Auditoría de seguridad en movimientos no autorizados.",
@@ -66,7 +66,7 @@ export const siteData = {
       description: "Gestión estructurada de reclamaciones institucionales para la defensa del patrimonio de personas y empresas.",
       descripción: "Gestión estructurada de reclamaciones institucionales para la defensa del patrimonio de personas y empresas.",
       desc: "Gestión estructurada de reclamaciones institucionales para la defensa del patrimonio de personas y empresas.",
-      imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop",
+      imageUrl: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=85&w=1200&auto=format&fit=crop",
       icon: "FileText",
       details: [
         "Elaboración de expedientes para la protección de activos.",
