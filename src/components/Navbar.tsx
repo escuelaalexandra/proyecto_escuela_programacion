@@ -39,7 +39,6 @@ export default function Navbar() {
     <header className="fixed left-0 right-0 top-0 z-50 bg-titanio-900/75 backdrop-blur-xl">
       <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-3 px-4 sm:min-h-[82px] sm:px-6 lg:min-h-[86px] lg:px-8">
 
-        {/* LOGO + NOMBRE */}
         <Link
           href="/"
           onClick={closeMenu}
@@ -54,7 +53,6 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* MENÚ ESCRITORIO */}
         <nav className="hidden items-center gap-6 text-base font-bold text-titanio-300 md:flex lg:gap-8 lg:text-lg">
           <Link href="/" className="transition-colors hover:text-white">
             Inicio
@@ -82,7 +80,6 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* WHATSAPP ESCRITORIO */}
         <a
           href={whatsappUrl}
           target="_blank"
@@ -93,7 +90,6 @@ export default function Navbar() {
           <span>Asesoría</span>
         </a>
 
-        {/* MENÚ MÓVIL / TABLET */}
         <div ref={menuRef} className="relative md:hidden">
           <button
             type="button"
@@ -109,54 +105,54 @@ export default function Navbar() {
             )}
           </button>
 
-        {menuOpen && (
-  <div className="absolute right-0 top-[calc(100%+12px)] w-[min(88vw,340px)] overflow-hidden rounded-2xl border border-white/10 bg-[#18181b]/95 p-3 shadow-2xl backdrop-blur-xl"
-    <nav className="flex flex-col gap-1">
-      <Link
-        href="/"
-        onClick={closeMenu}
-        className="rounded-xl px-5 py-4 text-base font-bold text-white transition hover:bg-white/5"
-      >
-        Inicio
-      </Link>
+          {menuOpen && (
+            <div className="absolute right-0 top-[calc(100%+12px)] w-[min(88vw,340px)] overflow-hidden rounded-2xl border border-white/10 bg-[#18181b]/95 p-3 shadow-2xl backdrop-blur-xl">
+              <nav className="flex flex-col gap-1">
+                <Link
+                  href="/"
+                  onClick={closeMenu}
+                  className="rounded-xl px-5 py-4 text-base font-bold text-white transition hover:bg-white/5"
+                >
+                  Inicio
+                </Link>
 
-      <Link
-        href="/servicios"
-        onClick={closeMenu}
-        className="rounded-xl px-5 py-4 text-base font-bold text-white transition hover:bg-white/5"
-      >
-        Servicios
-      </Link>
+                <Link
+                  href="/servicios"
+                  onClick={closeMenu}
+                  className="rounded-xl px-5 py-4 text-base font-bold text-white transition hover:bg-white/5"
+                >
+                  Servicios
+                </Link>
 
-      <Link
-        href="/nosotros"
-        onClick={closeMenu}
-        className="rounded-xl px-5 py-4 text-base font-bold text-white transition hover:bg-white/5"
-      >
-        Nosotros
-      </Link>
+                <Link
+                  href="/nosotros"
+                  onClick={closeMenu}
+                  className="rounded-xl px-5 py-4 text-base font-bold text-white transition hover:bg-white/5"
+                >
+                  Nosotros
+                </Link>
 
-      <Link
-        href="/contacto"
-        onClick={closeMenu}
-        className="rounded-xl px-5 py-4 text-base font-bold text-white transition hover:bg-white/5"
-      >
-        Contacto
-      </Link>
+                <Link
+                  href="/contacto"
+                  onClick={closeMenu}
+                  className="rounded-xl px-5 py-4 text-base font-bold text-white transition hover:bg-white/5"
+                >
+                  Contacto
+                </Link>
 
-      <a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={closeMenu}
-        className="mt-2 flex items-center justify-center gap-2.5 rounded-xl bg-[#25D366] px-5 py-4 text-base font-extrabold text-white shadow-lg transition hover:bg-[#20ba5a]"
-      >
-        <WhatsAppIcon className="h-6 w-6 fill-white" />
-        <span>Asesoría</span>
-      </a>
-    </nav>
-  </div>
-)} 
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  className="mt-2 flex items-center justify-center gap-2.5 rounded-xl bg-[#25D366] px-5 py-4 text-base font-extrabold text-white shadow-lg transition hover:bg-[#20ba5a]"
+                >
+                  <WhatsAppIcon className="h-6 w-6 fill-white" />
+                  <span>Asesoría</span>
+                </a>
+              </nav>
+            </div>
+          )}
         </div>
       </div>
     </header>
